@@ -5,14 +5,17 @@ public class FoodTruck {
 	private String truckName;
 	private int truckRating;
 	private String foodType;
-	private int id = 1;
+	private int id;
+	private static int uniqueId = 1;
 	
 
-	public FoodTruck(String truckName, int truckRating, String foodType, int id) {
-		this.truckName = truckName;
+	public FoodTruck(String _truckName, int truckRating, String foodType) {
+		
+		truckName = _truckName;
 		this.truckRating = truckRating;
 		this.foodType = foodType;
-		this.id = id;
+		this.id = uniqueId;
+		uniqueId++;
 	}
 
 	public String getTruckName() {
@@ -41,8 +44,8 @@ public class FoodTruck {
 
 	@Override
 	public String toString() {
-		return "FoodTruck [truckName= " + truckName + ", truckRating= " + truckRating + ", foodType= " + foodType + "ID= " 
-				+ id + "]";
+		return " Truck Name= " + truckName + ", Truck Rating= " + truckRating + ", Food Type= " + foodType + ", ID= " 
+				+ id ;
 	}
 
 }
