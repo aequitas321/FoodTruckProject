@@ -25,7 +25,9 @@ public class FoodTruckApplication {
 		while (i < 5) {
 
 			System.out.println("Enter your food trucks, You must have at least 3.");
+			
 			System.out.println("You have " + i + " trucks now.");
+			
 			System.out.println("\nWhat is the truck name?");
 			userTruckName = kb.nextLine();
 
@@ -40,7 +42,8 @@ public class FoodTruckApplication {
 			System.out.println("\nWhat is the rating of this truck? (Between 1 & 5)");
 			userTruckRating = kb.nextInt();
 			kb.nextLine();
-			System.out.println("\nWhat type of food does this truck have?");
+			
+			System.out.println("\nWhat type of food does this truck have?");			
 			userFoodType = kb.nextLine();
 
 			foodTrucks[i] = new FoodTruck(userTruckName, userTruckRating, userFoodType);
@@ -57,12 +60,12 @@ public class FoodTruckApplication {
 
 		System.out.println("=========================");
 		System.out.println("\tMenu");
-		System.out.println("=========================");
-		System.out.println("1) - List Trucks         |");
-		System.out.println("2) - Average Rating      |");
-		System.out.println("3) - Highest Rating      |");
-		System.out.println("4) - Quit                |");
-		System.out.println("-------------------------");
+		System.out.println("|=========================|");
+		System.out.println("|1) - List Trucks         |");
+		System.out.println("|2) - Average Rating      |");
+		System.out.println("|3) - Highest Rating      |");
+		System.out.println("|4) - Quit                |");
+		System.out.println("|_________________________|");
 		System.out.print("choice: ");
 
 		switch (kb.next()) {
@@ -88,9 +91,9 @@ public class FoodTruckApplication {
 
 	public void listTrucks() {
 		System.out.println("You now have " + foodTrucks.length + " trucks.");
+		
 		for (FoodTruck ft : foodTrucks) {
 			if (ft == null) {
-//				System.out.println("[Empty]");
 				continue;
 			} else {
 				System.out.println(ft.toString());
@@ -101,13 +104,15 @@ public class FoodTruckApplication {
 	public void averageRating() {
 		int rateTracker = 0;
 		double averageRating = 0;
+		
 		for (int i = 0; i < foodTrucks.length; i++) {
-
 			if (foodTrucks[i] == null) {
 				continue;
 			} else {
 				int rating = foodTrucks[i].getTruckRating();
+				
 				averageRating += rating;
+				
 				rateTracker++;
 			}
 
@@ -119,6 +124,7 @@ public class FoodTruckApplication {
 	public void highestRated() {
 		int rating = 0;
 		String highestTruck = "";
+		
 		for (int i = 0; i < foodTrucks.length; i++) {
 			if (foodTrucks[i] == null) {
 				continue;
@@ -127,6 +133,7 @@ public class FoodTruckApplication {
 				highestTruck = foodTrucks[i].toString();
 			}
 		}
+		
 		System.out.println("The highest rated truck is: " + highestTruck);
 	}
 

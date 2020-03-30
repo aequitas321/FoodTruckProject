@@ -9,9 +9,9 @@ public class FoodTruck {
 	private static int uniqueId = 1;
 	
 
-	public FoodTruck(String _truckName, int truckRating, String foodType) {
+	public FoodTruck(String truckName, int truckRating, String foodType) {
 		
-		truckName = _truckName;
+		this.truckName = truckName;
 		this.truckRating = truckRating;
 		this.foodType = foodType;
 		this.id = uniqueId;
